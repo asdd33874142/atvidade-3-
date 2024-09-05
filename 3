@@ -1,0 +1,626 @@
+PERGUNTA 11: #include using namespace std;
+
+// Função para verificar se um número é primo bool isPrime(int num) { // Números menores ou iguais a 1 não são primos if (num <= 1) return false;
+
+// 2 é o único número par que é primo
+se (num == 2) retornar verdadeiro;
+
+// Números pares maiores que 2 não são primos
+se (num % 2 == 0) retornar falso;
+
+// Verifica se o número é divisível por qualquer número ímpar
+para (int i = 3; i * i <= num; i += 2) {
+    se (num % i == 0) retornar falso;
+}
+
+retornar verdadeiro;
+}
+
+int principal() { int num;
+
+cout << "Digite um número: ";
+cin >> num;
+
+se (isPrime(num)) {
+    cout << num << "é um número primo." << fim;
+} outro {
+    cout << num << "não é um número primo." << fim;
+}
+
+retornar 0;
+}
+
+PERGUNTA 12: #incluir usando namespace std;
+
+int principal() { int N;
+
+cout << "Digite o valor de N: ";
+cin >> N;
+
+// Verifica se o valor de N é válido (não negativo)
+se (N < 0) {
+    cout << "O valor de N deve ser um número natural (não-negativo)." << fim;
+    retornar 1;
+}
+
+//Calcula a soma usando a fórmula
+int soma = N * (N + 1) / 2;
+
+cout << "A soma dos primeiros " << N << " números naturais é: " << soma << endl;
+
+retornar 0;
+}
+
+QUESTÃO 13: #include usando namespace std;
+
+int principal() { int N;
+
+cout << "Dígito o valor de N (número de termos): ";
+cin >> N;
+
+// Verifica se o valor de N é válido (positivo)
+se (N <= 0) {
+    cout << "O valor de N deve ser um número positivo." << fim;
+    retornar 1;
+}
+
+// Variáveis ​​para armazenar os termos da sequência de Fibonacci
+longo longo a = 0, b = 1, c;
+
+cout << "Os primeiros " << N << " os termos da sequência de Fibonacci são:" << endl;
+
+// Exibe o primeiro termo
+se (N >= 1) cout << a << " ";
+
+// Exibe o segundo termo
+se (N >= 2) cout << b << " ";
+
+// Calcula e exibe os seguintes termos
+para (int i = 3; i <= N; ++i) {
+    c = a + b;
+    cout << c << " ";
+    um = b;
+    b = c;
+}
+
+cout << fim;
+
+retornar 0;
+}
+
+PERGUNTA 14: #incluir usando namespace std;
+
+int main() { int num, numInvertido = 0;
+
+cout << "Digite um número inteiro: ";
+cin >> num;
+
+int numOriginal = num; // Armazene o número original para exibir depois, se necessário
+
+// Converte o número para positivo se para negativo
+se (num < 0) {
+    num = -num;
+}
+
+// Inverta o número
+enquanto (num > 0) {
+    int dígito = num% 10; // Extrai o último dígito
+    numInvertido = numInvertido * 10 + digito; // Adiciona o dígito ao novo número invertido
+    num /= 10; //Remove o último dígito do número original
+}
+
+// Exibe o número invertido
+cout << "Número invertido: " << (numOriginal < 0 ? -numInvertido : numInvertido) << endl;
+
+retornar 0;
+}
+
+QUESTÃO 15: #include #include // Inclui a biblioteca para a função pow using namespace std;
+
+int main() { base dupla, expoente;
+
+cout << "Digite uma base: ";
+cin >> base;
+
+cout << "Digite o expoente: ";
+cin >> expoente;
+
+//Calcula a potência usando a função pow
+double resultado = pow(base, expoente);
+
+cout << base << " elevado a " << expoente << " é: " << resultado << endl;
+
+retornar 0;
+}
+
+PERGUNTA 16: #incluir usando namespace std;
+
+bool isPalindrome(int num) { int original = num; int invertido = 0;
+
+// Converte o número para positivo se para negativo
+se (num < 0) {
+    retornar falso;
+}
+
+// Inverta o número
+enquanto (num > 0) {
+    int digito = num % 10;
+    invertido = invertido * 10 + dígito;
+    num /= 10;
+}
+
+retornar original == invertido;
+}
+
+int principal() { int num;
+
+cout << "Digite um número: ";
+cin >> num;
+
+se (isPalindrome(num)) {
+    cout << num << "é um palíndromo." << fim;
+} outro {
+    cout << num << "não é um palíndromo." << fim;
+}
+
+retornar 0;
+}
+
+PERGUNTA 17: #incluir usando namespace std;
+
+// Função para calcular o Máximo Divisor Comum (MDC) usando o Algoritmo de Euclides int calcularMDC(int a, int b) { while (b != 0) { int resto = a % b; uma =b; b = resto; } retornar um; }
+
+int principal() { int num1, num2;
+
+cout << "Digite o primeiro número: ";
+cin >> num1;
+
+cout << "Digite o segundo número: ";
+cin >> num2;
+
+se (num1 < 0 || num2 < 0) {
+    cout << "Os números devem ser não-negativos." << fim;
+    retornar 1;
+}
+
+int mdc = calcularMDC(num1, num2);
+
+cout << "O Máximo Divisor Comum (MDC) de " << num1 << " e " << num2 << " é: " << mdc << endl;
+
+retornar 0;
+}
+
+PERGUNTA 18: #incluir usando namespace std;
+
+// Função para calcular o Máximo Divisor Comum (MDC) usando o Algoritmo de Euclides int calcularMDC(int a, int b) { while (b != 0) { int resto = a % b; uma =b; b = resto; } retornar um; }
+
+// Função para calcular o Mínimo Múltiplo Comum (MMC) int calcularMMC(int a, int b) { if (a == 0 || b == 0) return 0; // MMC de qualquer número com 0 é 0 return (a * b) / calcularMDC(a, b); }
+
+int principal() { int num1, num2;
+
+cout << "Digite o primeiro número: ";
+cin >> num1;
+
+cout << "Digite o segundo número: ";
+cin >> num2;
+
+se (num1 < 0 || num2 < 0) {
+    cout << "Os números devem ser não-negativos." << fim;
+    retornar 1;
+}
+
+int mmc = calcularMMC(num1, num2);
+
+cout << "O Mínimo Múltiplo Comum (MMC) de " << num1 << " e " << num2 << " é: " << mmc << endl;
+
+retornar 0;
+}
+
+PERGUNTA 19: #incluir usando namespace std;
+
+// Função para verificar se um número é perfeito bool isPerfect(int num) { if (num <= 1) return false; // Números menores ou iguais a 1 não são perfeitos
+
+int somaDivisores = 0;
+
+//Calcula a soma dos divisores próprios
+para (int i = 1; i <= num / 2; ++i) {
+    se (num % i == 0) {
+        somaDivisores += i;
+    }
+}
+
+// Verifica se a soma dos divisores é igual ao número
+retornar somaDivisores == num;
+}
+
+int principal() { int num;
+
+cout << "Digite um número: ";
+cin >> num;
+
+se (éPerfeito(num)) {
+    cout << num << "é um número perfeito." << fim;
+} outro {
+    cout << num << "não é um número perfeito." << fim;
+}
+
+retornar 0;
+}
+
+PERGUNTA 20: #incluir usando namespace std;
+
+// Função para ordenar o vetor usando o algoritmo Bubble Sort void bubbleSort(int arr[], int n) { for (int i = 0; i < n - 1; ++i) { for (int j = 0; j < n - i - 1; ++j) { if (arr[j] > arr[j + 1]) { // Troca arr[j] e arr[j + 1] int temp = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = temp; } } } }
+
+// Função para exibir os elementos do vetor void exibirVetor(int arr[], int n) { for (int i = 0; i < n; ++i) { cout << arr[i] << " "; } cout << endl; }
+
+int principal() { int n;
+
+cout << "Digite o número de elementos no vetor: ";
+cin >> n;
+
+int* arr = novo int[n]; // Cria um vetor dinamicamente
+
+cout << "Digite os elementos do vetor: ";
+para (int i = 0; i < n; ++i) {
+    cin >> arr[i];
+}
+
+// Ordem ou vetor
+bubbleSort(arr, n);
+
+// Exibe o vetor ordenado
+cout << "Vetor ordenado em ordem crescente: ";
+exibirVetor(arr, n);
+
+excluir[] arr; // Libera a memória alocada para o vetor
+
+retornar 0;
+}
+
+PERGUNTA 21: #incluir usando namespace std;
+
+// Função para realizar a busca linear em um vetor int buscaLinear(const int arr[], int n, int valor) { for (int i = 0; i < n; ++i) { if (arr[i] = = valor) { retornar i; // Retorna o índice onde o valor foi encontrado } } return -1; // Retorna -1 se o valor não for encontrado }
+
+int main() { int n, valor;
+
+cout << "Digite o número de elementos no vetor: ";
+cin >> n;
+
+int* arr = novo int[n]; // Cria um vetor dinamicamente
+
+cout << "Digite os elementos do vetor: ";
+para (int i = 0; i < n; ++i) {
+    cin >> arr[i];
+}
+
+cout << "Digite o valor a ser buscado: ";
+cin >> valor;
+
+int resultado = buscaLinear(arr, n, valor);
+
+se (resultado != -1) {
+    cout << "Valor " << valor << " encontrado no índice " << resultado << "." << fim;
+} outro {
+    cout << "Valor " << valor << " não encontrado no vetor." << fim;
+}
+
+excluir[] arr; // Libera a memória alocada para o vetor
+
+retornar 0;
+}
+
+PERGUNTA 22: #incluir usando namespace std;
+
+// Função para realizar a busca binária em um vetor ordenado int buscaBinaria(const int arr[], int n, int valor) { int esquerda = 0; int direita=n - 1;
+
+enquanto (esquerda <= direita) {
+    int meio = esquerda + (direita - esquerda) / 2;
+
+    se (arr[meio] == valor) {
+        retornar meio; // Valor encontrado, retorna o índice
+    }
+
+    se (arr[meio] < valor) {
+        esquerda = meio + 1; // Descartar a metade esquerda
+    } outro {
+        direita = meio - 1; // Descartar a metade direita
+    }
+}
+
+retornar -1; // Valor não encontrado
+}
+
+int main() { int n, valor;
+
+cout << "Digite o número de elementos no vetor: ";
+cin >> n;
+
+int* arr = novo int[n]; // Cria um vetor dinamicamente
+
+cout << "Digite os elementos do vetor (em ordem crescente): ";
+para (int i = 0; i < n; ++i) {
+    cin >> arr[i];
+}
+
+cout << "Digite o valor a ser buscado: ";
+cin >> valor;
+
+int resultado = buscaBinaria(arr, n, valor);
+
+se (resultado != -1) {
+    cout << "Valor " << valor << " encontrado no índice " << resultado << "." << fim;
+} outro {
+    cout << "Valor " << valor << " não encontrado no vetor." << fim;
+}
+
+excluir[] arr; // Libera a memória alocada para o vetor
+
+retornar 0;
+}
+
+PERGUNTA 23:
+
+PERGUNTA 24: #include <stdio.h> #include <math.h> #include <string.h>
+
+int binarioParaDecimal(const char *binario) { int decimal = 0; int comprimento = strlen(binario);
+
+for (int i = comprimento - 1; i >= 0; i--) {
+    se (binario[i] == '1') {
+        decimal += pow(2, comprimento - 1 - i);
+    }
+}
+
+retornar decimal;
+}
+
+int main() { char binário[65]; // Assumindo um máximo de 64 bits + 1 para terminar nulo
+
+printf("Digite um número binário: ");
+scanf("%s", binário);
+
+// Verifica se o número binário é válido
+para (int i = 0; i < strlen(binario); i++) {
+    if (binario[i] != '0' && binario[i] != '1') {
+        printf("Número binário inválido.\n");
+        retornar 1;
+    }
+}
+
+int decimal = binarioParaDecimal(binario);
+
+printf("O número decimal é: %d\n", decimal);
+
+retornar 0;
+}
+
+PERGUNTA 25: #include <stdio.h>
+
+void decimalParaBinario(int numero) { // Vetor para armazenar os dígitos binários int binario[32]; int eu = 0;
+
+// Caso especial para o número 0
+se (número == 0) {
+    printf("0");
+    retornar;
+}
+
+//Calcula os dígitos binários
+enquanto (número > 0) {
+    binário[i] = número % 2; // Armazena o resto da divisão por 2
+    número /= 2; //Divide o número por 2
+    eu++;
+}
+
+// Imprimir os dígitos binários na ordem correta (reversa)
+printf("Número binário: ");
+para (int j = i - 1; j >= 0; j--) {
+    printf("%d", binário[j]);
+}
+printf("\n");
+}
+
+int main() { int numeroDecimal;
+
+printf("Dígito de um número decimal: ");
+scanf("%d", &numeroDecimal);
+
+decimalParaBinario(numeroDecimal);
+
+retornar 0;
+}
+
+PERGUNTA 26: #include <stdio.h>
+
+#define MAX 10 // Definindo o tamanho máximo para as matrizes
+
+// Função para ler uma matriz void lerMatriz(int matriz[MAX][MAX], int linhas, int colunas) { printf("Digite os elementos da matriz:\n"); for (int i = 0; i < linhas; i++) { for (int j = 0; j < colunas; j++) { printf("Elemento [%d][%d]: ", i, j); scanf("%d", &matriz[i][j]); } } }
+
+// Função para imprimir uma matriz void imprimirMatriz(int matriz[MAX][MAX], int linhas, int colunas) { printf("Matriz:\n"); for (int i = 0; i < linhas; i++) { for (int j = 0; j < colunas; j++) { printf("%d ", matriz[i][j]); } printf("\n"); } }
+
+// Função para somar duas matrizes void somarMatrizes(int matriz1[MAX][MAX], int matriz2[MAX][MAX], int resultado[MAX][MAX], int linhas, int colunas) { for (int i = 0 ; i < linhas i++) { for (int j = 0; j < colunas; j++) { resultado[i][j] = matriz1[i][j] + matriz2[i][j]; } } }
+
+int main() { int matriz1[MAX][MAX], matriz2[MAX][MAX], resultado[MAX][MAX]; int linhas, colunas;
+
+//Leitura do tamanho das matrizes
+printf("Digite o número de linhas e colunas das matrizes: ");
+scanf("%d %d", &linhas, &colunas);
+
+// Verifica se o tamanho é válido
+if (linhas > MAX || colunas > MAX || linhas <= 0 || colunas <= 0) {
+    printf("Tamanho da matriz inválido.\n");
+    retornar 1;
+}
+
+printf("Digite os elementos da primeira matriz:\n");
+lerMatriz(matriz1, linhas, colunas);
+
+printf("Digite os elementos da segunda matriz:\n");
+lerMatriz(matriz2, linhas, colunas);
+
+// Somar as matrizes
+somarMatrizes(matriz1, matriz2, resultado, linhas, colunas);
+
+// Exibir as matrizes e o resultado
+printf("\nPrimeira matriz:\n");
+imprimirMatriz(matriz1, linhas, colunas);
+
+printf("\nSegunda matriz:\n");
+imprimirMatriz(matriz2, linhas, colunas);
+
+printf("\nMatriz resultante da soma:\n");
+imprimirMatriz(resultado, linhas, colunas);
+
+retornar 0;
+}
+
+PERGUNTA 27: #include <stdio.h>
+
+#define MAX 10 // Definindo o tamanho máximo para as matrizes
+
+// Função para ler uma matriz void lerMatriz(int matriz[MAX][MAX], int linhas, int colunas) { printf("Digite os elementos da matriz:\n"); for (int i = 0; i < linhas; i++) { for (int j = 0; j < colunas; j++) { printf("Elemento [%d][%d]: ", i, j); scanf("%d", &matriz[i][j]); } } }
+
+// Função para imprimir uma matriz void imprimirMatriz(int matriz[MAX][MAX], int linhas, int colunas) { printf("Matriz:\n"); for (int i = 0; i < linhas; i++) { for (int j = 0; j < colunas; j++) { printf("%d ", matriz[i][j]); } printf("\n"); } }
+
+// Função para multiplicar duas matrizes void multiplicarMatrizes(int matriz1[MAX][MAX], int linhas1, int colunas1, int matriz2[MAX][MAX], int linhas2, int colunas2, int resultado[MAX][MAX]) { // Verifica se a multiplicação é possível if (colunas1 != linhas2) { printf("A multiplicação não é possível. O número de colunas da primeira matriz deve ser igual ao número de linhas da segunda matriz.\n"); retornar; }
+
+// Inicializa a matriz resultado com zeros
+for (int i = 0; i < linhas1; i++) {
+    para (int j = 0; j < colunas2; j++) {
+        resultado[i][j] = 0;
+    }
+}
+
+//Calcula o produto das matrizes
+for (int i = 0; i < linhas1; i++) {
+    para (int j = 0; j < colunas2; j++) {
+        para (int k = 0; k < colunas1; k++) {
+            resultado[i][j] += matriz1[i][k] * matriz2[k][j];
+        }
+    }
+}
+}
+
+int main() { int matriz1[MAX][MAX], matriz2[MAX][MAX], resultado[MAX][MAX]; int linhas1, colunas1, linhas2, colunas2;
+
+// Leitura da primeira matriz
+printf("Digite o número de linhas e colunas da matriz primeira: ");
+scanf("%d %d", &linhas1, &colunas1);
+
+if (linhas1 > MAX || colunas1 > MAX || linhas1 <= 0 || colunas1 <= 0) {
+    printf("Tamanho da matriz inválido.\n");
+    retornar 1;
+}
+
+printf("Digite os elementos da primeira matriz:\n");
+lerMatriz(matriz1, linhas1, colunas1);
+
+// Leitura da segunda matriz
+printf("Digite o número de linhas e colunas da matriz segunda: ");
+scanf("%d %d", &linhas2, &colunas2);
+
+if (linhas2 > MAX || colunas2 > MAX || linhas2 <= 0 || colunas2 <= 0) {
+    printf("Tamanho da matriz inválido.\n");
+    retornar 1;
+}
+
+se (colunas1 != linhas2) {
+    printf("A multiplicação não é possível. O número de colunas da primeira matriz deve ser igual ao número de linhas da segunda matriz.\n");
+    retornar 1;
+}
+
+printf("Digite os elementos da segunda matriz:\n");
+lerMatriz(matriz2, linhas2, colunas2);
+
+// Multiplicar as matrizes
+multiplicarMatrizes(matriz1, linhas1, colunas1, matriz2, linhas2, colunas2, resultado);
+
+// Exibir as matrizes e o resultado
+printf("\nPrimeira matriz:\n");
+imprimirMatriz(matriz1, linhas1, colunas1);
+
+printf("\nSegunda matriz:\n");
+imprimirMatriz(matriz2, linhas2, colunas2);
+
+printf("\nMatriz resultante da multiplicação:\n");
+imprimirMatriz(resultado, linhas1, colunas2);
+
+retornar 0;
+}
+
+PERGUNTA 28:
+
+PERGUNTA 29: #include <stdio.h> #include <ctype.h> // Para a função tolower
+
+// Função para contar o número de votos em uma string int contarVogais(const char *str) { int contador = 0; caracter c;
+
+// Itera sobre cada caractere da string
+enquanto ((c = *str++) != '\0') {
+    // Converte o caractere para minúsculo
+    c = parabaixar(c);
+
+    // Verifica se o caractere é uma vogal
+    se (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+        contador++;
+    }
+}
+
+retornar contador;
+}
+
+int principal() { char str[100];
+
+//Leitura da string do usuário
+printf("Digite uma string: ");
+fgets(str, sizeof(str), stdin);
+
+// Conta o número de votos na string
+int numeroDeVogais = contarVogais(str);
+
+// Exibe o resultado
+printf("Número de votos na string: %d\n", numeroDeVogais);
+
+retornar 0;
+}
+
+PERGUNTA 30: #include <stdio.h> #include <ctype.h> // Para a função isdigit
+
+// Função que converte uma string para um número inteiro int stringParaInteiro(const char *str) { int resultado = 0; sinal interno = 1; // 1 para positivo, -1 para negativo
+
+// Ignorar espaços iniciais
+enquanto (isspace(*str)) {
+    str++;
+}
+
+// Verificar o sinal
+se (*str == '-') {
+    sinal = -1;
+    str++;
+} senão se (*str == '+') {
+    str++;
+}
+
+//Converte uma string para número inteiro
+enquanto (*str && isdigit(*str)) {
+    resultado = resultado * 10 + (*str - '0');
+    str++;
+}
+
+return sinal * resultado;
+}
+
+int principal() { char str[100];
+
+//Leitura da string do usuário
+printf("Digite uma string para converter em inteiro: ");
+fgets(str, sizeof(str), stdin);
+
+// Remove o caractere de nova linha, se presente
+str[strcspn(str, "\n")] = '\0';
+
+// Converte uma string para inteira
+int numero = stringParaInteiro(str);
+
+// Exibe o resultado
+printf("Número inteiro convertido: %d\n", numero);
+
+retornar 0;
+}
